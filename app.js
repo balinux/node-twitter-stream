@@ -4,12 +4,12 @@ const express = require('express'),
     hbs = require('express-handlebars'),
     server = require('http').createServer(app),
     Twit = require('twit'),
-    io 	= require('socket.io')(server);
+    io = require('socket.io')(server);
 
 app.engine('handlebars', hbs());
 app.set('view engine', 'handlebars');
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render('home');
 });
 
@@ -22,9 +22,9 @@ const twitter = new Twit({
     access_token_secret: 'xFdxY1bV2aRaxvy5AJ16i7kCxsVNe6MzThTr5QgJxJzwJ'
 });
 
-const stream = twitter.stream('statuses/filter', { track: 'nodejs,angular' });
+const stream = twitter.stream('statuses/filter', { track: 'react native,flutter' });
 
-io.on('connect', function(socket) {
+io.on('connect', function (socket) {
     stream.on('tweet', function (tweet) {
         const data = {
             'name': tweet.user.name,
