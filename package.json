@@ -15,7 +15,7 @@
     "twit": "^2.2.9"
   },
   "devDependencies": {
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^3.0.2",
     "nodemon": "^1.11.0"
   }
 }
