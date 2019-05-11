@@ -14,7 +14,11 @@
 <div id="tweet-container"></div>
 
 <script type="text/javascript">
-    const socket = io('http://localhost:3000');
+    // if using localhost
+    // const socket = io('http://localhost:3000');
+    
+    // server on heroku
+    const socket = io('https://node-vue-socket.herokuapp.com/');
 
     socket.on('tweets', function (tweet) {
         const html = '<div class="row"><div class="container"><img src="' + tweet.avatar + '" class="avatar pull-left" style="padding:10px;"/><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5><span class="text">' + tweet.text + '</span></div></div><hr>';
